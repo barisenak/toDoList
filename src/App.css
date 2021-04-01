@@ -1,1 +1,57 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
 
+.form {
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.btn {
+  width: 25%;
+  padding: 0.5rem;
+  color: cadetblue;
+  font-size: 0.9rem;
+  font-weight: bold;
+  background-color: rgb(20, 19, 19);
+  margin: 0.5rem auto;
+}
+
+.btn:hover {
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+}
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 3rem auto;
+  width: 95%;
+  justify-content: space-around;
+}
+
+.list {
+  background-color: rgb(110, 168, 146);
+  width: 30%;
+  text-align: center;
+  font-weight: bold;
+  padding: 0.7rem 0;
+}
+
+.a {
+  color: rgb(45, 49, 49);
+}
+
+.card {
+  background-color: rgb(110, 168, 146);
+  text-align: center;
+}
+
+/* #edit,
+#delete {
+  height: 1.2rem;
+  width: 20%;
+} */
