@@ -3,16 +3,21 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 
 function TextInput() {
+  // mapDispatchToProps
   const dispatch = useDispatch();
 
-  let [typedTask, setTypedTask] = useState("");
+  const [typedTask, setTypedTask] = useState("");
 
   let submit = (e) => {
     e.preventDefault();
     console.log(e);
+    // refactor to use Redux actions
     dispatch({
       type: "ADD_TASK",
-      payload: typedTask,
+      payload: {
+        id: `${Date.now()}`,
+        text: typedTask,
+      },
     });
     setTypedTask("");
   };

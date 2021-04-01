@@ -3,29 +3,26 @@ const initialState = {
   deleted: [],
 };
 
-let arrToDo = [];
-let arrDel = [];
+// TO-DO Item
+// { id: String, text: String }
 
+// Should be "Pure Function"!
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_TASK": {
-      console.log(action.payload);
-      arrToDo.push(action.payload);
       return {
         ...state,
-        toDo: arrToDo,
+        toDo: [...state.toDo, action.payload],
       };
     }
 
     case "DELETE_TASK": {
-      arrDel.push(arrToDo[action.payload]);
-      let CopyarrToDo = [...arrToDo];
-      CopyarrToDo.splice(action.payload, 1);
-      console.log(arrToDo);
+      const id = action.payload;
+
       return {
         ...state,
-        toDo: CopyarrToDo,
-        deleted: arrDel,
+        toDo: state.toDo.filter((el) => el.id !== id),
+        deleted: [...state.deleted, state.toDo.find((el) => el.id === id)],
       };
     }
 

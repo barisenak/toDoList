@@ -1,8 +1,8 @@
 import "./App.css";
-import TextInput from "./components/TextInput.js";
+import TextInput from "./components/TextInput";
 
-import Delete from "./components/Delete.js";
-import ToDo from "./components/ToDo.js";
+import Delete from "./components/Delete";
+import ToDo from "./components/ToDo";
 
 function App() {
   return (

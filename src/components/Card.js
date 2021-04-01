@@ -9,10 +9,10 @@ class Card extends Component {
     e.target.id === "Delete" ? this.deleteTask(e) : this.editTask(e);
   };
 
-  deleteTask = (e) => {
+  deleteTask = ({ target }) => {
     store.dispatch({
       type: "DELETE_TASK",
-      payload: e.target.parentNode.id,
+      payload: this.props.id,
     });
   };
 
@@ -22,7 +22,7 @@ class Card extends Component {
 
   render() {
     return (
-      <div className="card" id={this.props.id} key={this.props.key}>
+      <div className="card">
         <p className="title">{this.props.text}</p>
         <button id={this.props.btnName} onClick={this.handleClick}>
           {this.props.btnName}
