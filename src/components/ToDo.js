@@ -7,20 +7,22 @@ import { useSelector } from "react-redux";
 function ToDo() {
   // tasks: Use appropriate variable naming
   // Block Element Modificator
-  const tasksFromRedux = useSelector((state) => {
+  const tasks = useSelector((state) => {
+    console.log(state.toDo)
     return state.toDo;
   });
 
   return (
-    <div className="list">
+    <div className="desk">
       To Do:
-      <div className="deskToDo">
-        {tasksFromRedux &&
-          tasksFromRedux.map((item, index) => {
+      <div>
+        {tasks &&
+          tasks.map((item) => {
             // Use key as index only if count of elements is not changing
             return (
               <Card
                 text={item.text}
+                item={item}
                 id={item.id}
                 key={item.id}
                 btnName="Delete"

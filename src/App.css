@@ -33,7 +33,7 @@
   justify-content: space-around;
 }
 
-.list {
+.desk {
   background-color: rgb(110, 168, 146);
   width: 30%;
   text-align: center;
@@ -50,8 +50,30 @@
   text-align: center;
 }
 
-/* #edit,
-#delete {
-  height: 1.2rem;
-  width: 20%;
-} */
+#modal__input{
+  width: 93.5%;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  padding:30px 0;
+  background-color: rgba(83, 87, 85, 0.459);
+}
+
+.modal__window {
+    background: #fff;
+    width: 600px;
+    max-width: 100%;
+}

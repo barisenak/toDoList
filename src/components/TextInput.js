@@ -10,7 +10,6 @@ function TextInput() {
 
   let submit = (e) => {
     e.preventDefault();
-    console.log(e);
     // refactor to use Redux actions
     dispatch({
       type: "ADD_TASK",

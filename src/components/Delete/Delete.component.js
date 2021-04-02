@@ -2,19 +2,20 @@ import "../../App.css";
 
 import Card from "../Card.js";
 
-function Delete({ tasks, test }) {
+function Delete({ tasks }) {
   // smart and dump components
   // redux-logger
 
   return (
-    <div className="list">
+    <div className="desk">
       Deleted:
-      <div className="deskDeleted">
+      <div>
         {tasks &&
-          tasks.map((item, index) => {
+          tasks.map((item) => {
             return (
               <Card
                 text={item.text}
+                item={item}
                 id={item.id}
                 key={item.id}
                 btnName="Restore"
