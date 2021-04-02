@@ -2,30 +2,22 @@ import "../App.css";
 
 import { Component } from "react";
 import store from "../index.js";
+import {deleteAction, restoreAction, getModalAction} from "./actions"
 
 class Card extends Component {
 
   deleteTask = () => {
-    store.dispatch({
-      type: "DELETE_TASK",
-      payload: this.props.id,
-    });
+    store.dispatch(deleteAction(this.props.id));
   };
 
   restoreTask = () => {
-    console.log(this.props.id);
-    store.dispatch({
-      type: "RESTORE_TASK",
-      payload: this.props.id,
-    });
+    store.dispatch(restoreAction(this.props.id));
   };
 
   editTask = (e) => {
     e.preventDefault();
-    store.dispatch({
-      type: "GET_MODAL",
-      payload: this.props.item,
-    });
+    store.dispatch(getModalAction(this.props.item)
+    );
   };
 
   render() {

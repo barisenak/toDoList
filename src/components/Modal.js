@@ -3,34 +3,30 @@ import "../App.css";
 
 import { useState } from "react";
 
-
 import { useDispatch, useSelector } from "react-redux";
+
+import {editAction} from "./actions"
+
 
 function Modal() {
 
-    const [task, editTask] = useState("");
     const dispatch = useDispatch();
     const text = useSelector((state) => {
-        return state.toDo.find((el) => el.id === state.edited.id).text;
+        return state.toDo.find((el) => el.id === state.edited.id);
       });
+      const [task, editTask] = useState(text.text);
+
 
   
     const edit = () =>{
-        // refactor to use Redux actions
-        dispatch({
-        type: "EDIT_TASK",
-        payload: {
-            id: `${Date.now()}`,
-            text: task,
-        },
-        });
+        dispatch(editAction(text.id, task));
         editTask("");
     }
 
   return (
     <div className="modal">
     <div className="modal__window">
-        <input type="text" id="modal__input" value={text} onChange={(event) => {
+        <input type="text" id="modal__input" value={task} onChange={(event) => {
           editTask(event.target.value)}}></input>
         <button onClick={(event) => {
           edit(event.target.value)}}>Edit</button>  

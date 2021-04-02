@@ -1,4 +1,3 @@
-
 const initialState = {
   toDo: [],
   deleted: [],
@@ -6,7 +5,6 @@ const initialState = {
   edited: null
 };
 
-// Should be "Pure Function"!
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_TASK": {
@@ -39,7 +37,6 @@ const reducer = (state = initialState, action) => {
     }
 
     case "GET_MODAL": {
-      console.log(action.payload);
       return {
         ...state,
         modal: true,
@@ -48,12 +45,11 @@ const reducer = (state = initialState, action) => {
     }
 
     case "EDIT_TASK": {
-      state.edited.text = action.payload.text
       return {
         ...state,
         modal: false,
-        toDo: state.toDo
-      };
+        toDo: state.toDo.map((item) => item.id === action.payload.id ? {...item, text: action.payload.text} : item)
+      }; 
     }
 
     default:
