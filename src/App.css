@@ -1,1 +1,79 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
 
+.form {
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.btn {
+  width: 25%;
+  padding: 0.5rem;
+  color: cadetblue;
+  font-size: 0.9rem;
+  font-weight: bold;
+  background-color: rgb(20, 19, 19);
+  margin: 0.5rem auto;
+}
+
+.btn:hover {
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+}
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 3rem auto;
+  width: 95%;
+  justify-content: space-around;
+}
+
+.desk {
+  background-color: rgb(110, 168, 146);
+  width: 30%;
+  text-align: center;
+  font-weight: bold;
+  padding: 0.7rem 0;
+}
+
+.a {
+  color: rgb(45, 49, 49);
+}
+
+.card {
+  background-color: rgb(110, 168, 146);
+  text-align: center;
+}
+
+#modal__input{
+  width: 93.5%;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  padding:30px 0;
+  background-color: rgba(83, 87, 85, 0.459);
+}
+
+.modal__window {
+    background: #fff;
+    width: 600px;
+    max-width: 100%;
+}
