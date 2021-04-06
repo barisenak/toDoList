@@ -2,7 +2,7 @@ import "../App.css";
 
 import { Component } from "react";
 import store from "../index.js";
-import {deleteAction, restoreAction, getModalAction} from "./actions"
+import {deleteAction, restoreAction, getModalAction} from "../store/actions"
 
 class Card extends Component {
 

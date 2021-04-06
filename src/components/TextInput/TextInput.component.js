@@ -1,18 +1,14 @@
-import "../App.css";
-import { useDispatch } from "react-redux";
+import "../../App.css";
 import { useState } from "react";
-import { addAction } from "./actions"
 
 
-function TextInput() {
-  // mapDispatchToProps
-  const dispatch = useDispatch();
-
+function TextInput({addAction}) {
+    
   const [typedTask, setTypedTask] = useState("");
 
   const submit = (e) => {
     e.preventDefault();
-    dispatch(addAction(typedTask));
+    addAction(typedTask)
     setTypedTask("");
   };
 

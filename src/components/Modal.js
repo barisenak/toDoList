@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import {editAction} from "./actions"
+import {editAction} from "../store/actions"
 
 
 function Modal() {
