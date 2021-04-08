@@ -50,7 +50,7 @@
   text-align: center;
 }
 
-#modal__input{
+#modal__input {
   width: 93.5%;
 }
 
@@ -68,12 +68,12 @@
   justify-content: center;
   align-items: center;
   z-index: 99;
-  padding:30px 0;
+  padding: 30px 0;
   background-color: rgba(83, 87, 85, 0.459);
 }
 
 .modal__window {
-    background: #fff;
-    width: 600px;
-    max-width: 100%;
+  background: #fff;
+  width: 600px;
+  max-width: 100%;
 }

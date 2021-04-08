@@ -1,6 +1,6 @@
 import "../../App.css";
 
-import Card from "../Card.js";
+import Card from "../Card/";
 
 function Delete({ tasks }) {
   // smart and dump components

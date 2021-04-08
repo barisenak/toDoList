@@ -1,14 +1,12 @@
 import "../../App.css";
 import { useState } from "react";
 
-
-function TextInput({addAction}) {
-    
+function TextInput({ addAction }) {
   const [typedTask, setTypedTask] = useState("");
 
   const submit = (e) => {
     e.preventDefault();
-    addAction(typedTask)
+    addAction(typedTask);
     setTypedTask("");
   };
 

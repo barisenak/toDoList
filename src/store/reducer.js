@@ -2,7 +2,7 @@ const initialState = {
   toDo: [],
   deleted: [],
   modal: false,
-  edited: null
+  edited: null,
 };
 
 const reducer = (state = initialState, action) => {
@@ -21,7 +21,6 @@ const reducer = (state = initialState, action) => {
         ...state,
         deleted: [...state.deleted, state.toDo.find((el) => el.id === id)],
         toDo: state.toDo.filter((el) => el.id !== id),
-    
       };
     }
 
@@ -32,7 +31,6 @@ const reducer = (state = initialState, action) => {
         ...state,
         toDo: [...state.toDo, state.deleted.find((el) => el.id === id)],
         deleted: state.deleted.filter((el) => el.id !== id),
-    
       };
     }
 
@@ -40,7 +38,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         modal: true,
-        edited: action.payload
+        edited: action.payload,
       };
     }
 
@@ -48,13 +46,16 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         modal: false,
-        toDo: state.toDo.map((item) => item.id === action.payload.id ? {...item, text: action.payload.text} : item)
-      }; 
+        toDo: state.toDo.map((item) =>
+          item.id === action.payload.id
+            ? { ...item, text: action.payload.text }
+            : item
+        ),
+      };
     }
 
     default:
       return state;
-    
   }
 };
 export default reducer;
